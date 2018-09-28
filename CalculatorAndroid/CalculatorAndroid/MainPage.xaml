@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CalculatorAndroid"
+             x:Class="CalculatorAndroid.MainPage">
+
+    <Grid BackgroundColor="#0E0B16">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.ColumnSpan="5" Text="Calculator" HorizontalOptions="Center" x:Name="lbl_title"/>
+        <Entry BackgroundColor="#4717F6" Grid.ColumnSpan="5" Grid.Column="0" MaxLength="20" Grid.Row="1" Placeholder="0" HorizontalOptions="Center" x:Name="ent_num1"/>
+        <Button BackgroundColor="A239CA" Grid.Column="0" Grid.Row="2"  Text="+" x:Name="btn_soum" Clicked="btn_soum_Clicked"/>
+        <Button  BackgroundColor="A239CA" Grid.Column="1" Grid.Row="2"  Text="-" x:Name="btn_sub" Clicked="btn_sub_Clicked"/>
+        <Button  BackgroundColor="A239CA" Grid.Column="2" Grid.Row="2"  Text="/" x:Name="btn_div" Clicked="btn_div_Clicked"/>
+        <Button  BackgroundColor="A239CA" Grid.Column="3" Grid.Row="2"  Text="*" x:Name="btn_mol" Clicked="btn_mol_Clicked"/>
+        <Button  BackgroundColor="A239CA" Grid.Column="4" Grid.Row="2"  Text="=" x:Name="btn_risultato" Clicked="btn_risultato_Clicked"/>
+        <Label Grid.ColumnSpan="5" Grid.Column="0" Grid.Row="4" HorizontalOptions="Center" FontSize="50" Text="" x:Name="lbl_risultato" />
+
+
+    </Grid>
+
+</ContentPage>
