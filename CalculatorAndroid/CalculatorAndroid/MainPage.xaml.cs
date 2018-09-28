@@ -18,31 +18,54 @@ namespace CalculatorAndroid
 
         private void btn_soum_Clicked(object sender, EventArgs e)
         {
-
-            risultato = risultato + Convert.ToInt32(ent_num1.Text);
-            ent_num1.Text = "";
-            lbl_risultato.Text = risultato.ToString();
+            try
+            {
+                risultato = risultato + Convert.ToInt32(ent_num1.Text);
+                ent_num1.Text = "";
+                lbl_risultato.Text = risultato.ToString();
+            }catch(Exception)
+            {
+                lbl_risultato.Text = "ERRORE";
+            }
         }
 
         private void btn_sub_Clicked(object sender, EventArgs e)
         {
-            risultato = risultato - Convert.ToInt32(ent_num1.Text);
-            ent_num1.Text = "";
-            lbl_risultato.Text = risultato.ToString();
+            try
+            {
+                risultato = risultato - Convert.ToInt32(ent_num1.Text);
+                ent_num1.Text = "";
+                lbl_risultato.Text = risultato.ToString();
+            }catch(Exception)
+            {
+                lbl_risultato.Text = "ERRORE";
+            }
         }
 
         private void btn_div_Clicked(object sender, EventArgs e)
         {
-            risultato = risultato / Convert.ToInt32(ent_num1.Text);
-            ent_num1.Text = "";
-            lbl_risultato.Text = risultato.ToString();
+            try
+            {
+                risultato = risultato / Convert.ToInt32(ent_num1.Text);
+                ent_num1.Text = "";
+                lbl_risultato.Text = risultato.ToString();
+            }catch(Exception)
+            {
+                lbl_risultato.Text = "ERRORE";
+            }
         }
 
         private void btn_mol_Clicked(object sender, EventArgs e)
         {
-            risultato = risultato * Convert.ToInt32(ent_num1.Text);
-            ent_num1.Text = "";
-            lbl_risultato.Text = risultato.ToString();
+            try
+            { 
+                risultato = risultato * Convert.ToInt32(ent_num1.Text);
+                ent_num1.Text = "";
+                lbl_risultato.Text = risultato.ToString();
+            }catch(Exception)
+            {
+                lbl_risultato.Text = "ERRORE";
+            }
         }
 
         private void btn_risultato_Clicked(object sender, EventArgs e)
