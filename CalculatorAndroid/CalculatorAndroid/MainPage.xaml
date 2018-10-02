@@ -10,7 +10,6 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
@@ -18,17 +17,42 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Entry BackgroundColor= "#4717F6" FontSize="50"  WidthRequest="900" Grid.ColumnSpan="5" Grid.Column="0" Grid.RowSpan="2" Grid.Row="0" Placeholder="0" HorizontalOptions="Center" x:Name="ent_num1"/>
-        <Button BackgroundColor="#A239CA" Grid.Column="0" Grid.Row="2"  Text="+" x:Name="btn_soum" Clicked="btn_soum_Clicked"/>
-        <Button  BackgroundColor="#A239CA" Grid.Column="1" Grid.Row="2"  Text="-" x:Name="btn_sub" Clicked="btn_sub_Clicked"/>
-        <Button  BackgroundColor="#A239CA" Grid.Column="2" Grid.Row="2"  Text="/" x:Name="btn_div" Clicked="btn_div_Clicked"/>
-        <Button  BackgroundColor="#A239CA" Grid.Column="3" Grid.Row="2"  Text="*" x:Name="btn_mol" Clicked="btn_mol_Clicked"/>
-        <Button  BackgroundColor="#A239CA" Grid.Column="4" Grid.Row="2"  Text="=" x:Name="btn_risultato" Clicked="btn_risultato_Clicked"/>
-        <Label Grid.ColumnSpan="5" TextColor="White" Grid.Column="0" Grid.Row="4" HorizontalOptions="Center" FontSize="50" Text="" x:Name="lbl_risultato" />
+        <Label Grid.Row="0" Grid.ColumnSpan="4" x:Name="lbl_showoperations" TextColor="White" HorizontalOptions="EndAndExpand" />
+        <Label BackgroundColor= "#4717F6" FontSize="50"  WidthRequest="900" Grid.ColumnSpan="4" Grid.Column="0" HorizontalTextAlignment="End" Grid.RowSpan="2" Grid.Row="1" HorizontalOptions="Center" x:Name="lbl_numbers" />
 
 
+        <Button BackgroundColor="#E7DFDD" ClassId="7" FontSize="30" Grid.Column="0" Grid.Row="5" Text="7" x:Name="btn_sette" Clicked="btn_number_Clicked" />
+        <Button BackgroundColor="#E7DFDD" ClassId="8" FontSize="30" Grid.Column="1" Grid.Row="5" Text="8" x:Name="btn_otto" Clicked="btn_number_Clicked" />
+        <Button BackgroundColor="#E7DFDD" ClassId="9" FontSize="30" Grid.Column="2" Grid.Row="5" Text="9" x:Name="btn_nove" Clicked="btn_number_Clicked" />
+        <Button BackgroundColor="#E7DFDD" ClassId="4" FontSize="30" Grid.Column="0" Grid.Row="6" Text="4" x:Name="btn_quattro" Clicked="btn_number_Clicked" />
+        <Button BackgroundColor="#E7DFDD" ClassId="5" FontSize="30" Grid.Column="1" Grid.Row="6" Text="5" x:Name="btn_cinque" Clicked="btn_number_Clicked" />
+        <Button BackgroundColor="#E7DFDD" ClassId="6" FontSize="30" Grid.Column="2" Grid.Row="6" Text="6" x:Name="btn_sei" Clicked="btn_number_Clicked" />
+        <Button BackgroundColor="#E7DFDD" ClassId="1" FontSize="30" Grid.Column="0" Grid.Row="7" Text="1" x:Name="btn_uno" Clicked="btn_number_Clicked" />
+        <Button BackgroundColor="#E7DFDD" ClassId="2" FontSize="30" Grid.Column="1" Grid.Row="7" Text="2" x:Name="btn_due" Clicked="btn_number_Clicked" />
+        <Button BackgroundColor="#E7DFDD" ClassId="3" FontSize="30" Grid.Column="2" Grid.Row="7" Text="3" x:Name="btn_tre" Clicked="btn_number_Clicked" />
+        <Button BackgroundColor="#E7DFDD" ClassId="0" FontSize="30" Grid.Column="1" Grid.Row="8" Text="0" x:Name="btn_zero" Clicked="btn_number_Clicked" />
+
+        <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="0" Grid.Row="8" Text="±" x:Name="btn_piumeno" Clicked="btn_piumeno_Clicked" />
+        <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="2" Grid.Row="8" Text="," x:Name="btn_virgola" Clicked="btn_virgola_Clicked" />
+        <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="0" Grid.Row="4" Text="CE" x:Name="btn_ClearEntry" Clicked="btn_ClearEntry_Clicked" />
+        <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="1" Grid.Row="4" Text="C" x:Name="btn_Clear" Clicked="btn_Clear_Clicked" />
+        <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="2" Grid.Row="4" Text="␡" x:Name="btn_delete" Clicked="btn_delete_Clicked" />
+        <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="0" Grid.Row="3" x:Name="btn_easteregg" Clicked="btn_easteregg_Clicked" />
+        <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="1" Grid.Row="3" Text="√" x:Name="btn_radicequadrata" Clicked="btn_radicequadrata_Clicked" />
+        <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="2" Grid.Row="3" Text="x^2" x:Name="btn_xallaseconda" Clicked="btn_xallaseconda_Clicked" />
+        <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="3" Grid.Row="3" Text="1/x" x:Name="btn_unosux" Clicked="btn_unosux_Clicked" />
+        <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="3" Grid.Row="4" Text="+" x:Name="btn_soum" Clicked="btn_soum_Clicked"/>
+        <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="3" Grid.Row="5" Text="-" x:Name="btn_sub" Clicked="btn_sub_Clicked"/>
+        <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="3" Grid.Row="6" Text="/" x:Name="btn_div" Clicked="btn_div_Clicked"/>
+        <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="3" Grid.Row="7" Text="*" x:Name="btn_mol" Clicked="btn_mol_Clicked"/>
+        <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="3" Grid.Row="8" Text="=" x:Name="btn_risultato" Clicked="btn_risultato_Clicked"/>
+        
     </Grid>
 
 </ContentPage>
