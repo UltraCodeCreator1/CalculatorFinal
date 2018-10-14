@@ -8,10 +8,7 @@ namespace OperationLIbrary
 {
     public interface IOperazione
     {
-        double Somma(double n);
-        double Sottrazione(double n);
-        double Divisione(double n);
-        double Moltiplicazione(double n);
+        double Calcolo(double n, string segno);
         double XAllaseconda(double n);
         double Radicequadrata(double n);
         double Unosux(double n);

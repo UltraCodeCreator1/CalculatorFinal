@@ -14,53 +14,6 @@ namespace OperationLIbrary
         {
             Check = false;
         }
-        public double Divisione(double n)
-        {
-            if (Check == false)
-            {
-                Risultato = n;
-                Check = true;
-            }
-            else
-                Risultato = Risultato / n;
-            return Risultato;
-        }
-
-        public double Moltiplicazione(double n)
-        {
-            if (Check == false)
-            {
-                Risultato = n;
-                Check = true;
-            }
-            else
-                Risultato = Risultato * n;
-            return Risultato;
-        }
-
-        public double Somma(double n)
-        {
-            if (Check == false)
-            {
-                Risultato = n;
-                Check = true;
-            }
-            else
-                Risultato = Risultato + n;
-            return Risultato;
-        }
-
-        public double Sottrazione(double n)
-        {
-            if (Check == false)
-            {
-                Risultato = n;
-                Check = true;
-            }
-            else
-                Risultato = Risultato - n;
-            return Risultato;
-        }
 
         public double XAllaseconda(double n)
         {
@@ -75,6 +28,34 @@ namespace OperationLIbrary
         public double Unosux(double n)
         {
             return 1 / n;
+        }
+
+        public double Calcolo(double n, string segno)
+        {
+            if (Check == false)
+            {
+                Risultato = n;
+                Check = true;
+            }
+            else
+            {
+                switch(segno)
+                {
+                    case "+":
+                        Risultato = Risultato + n;
+                        break;
+                    case "-":
+                        Risultato = Risultato - n;
+                        break;
+                    case "/":
+                        Risultato = Risultato / n;
+                        break;
+                    case "*":
+                        Risultato = Risultato * n;
+                        break;
+                }
+            }
+            return Risultato;
         }
     }
 }

@@ -21,8 +21,8 @@ namespace CalculatorAndroid
 
         public MainPage()
         {
-            o = new Operazione();
             InitializeComponent();
+            o = new Operazione();
             risultato = 0;
             check = false;
         }
@@ -32,9 +32,9 @@ namespace CalculatorAndroid
             if (lbl_numbers.Text != "")
             {
                 lbl_showoperations.Text = lbl_showoperations.Text + lbl_numbers.Text + "+";
-                risultato = o.Somma(double.Parse(lbl_numbers.Text));
-                lbl_numbers.Text = risultato.ToString("F1");
                 caseSwitch = "+";
+                risultato = o.Calcolo(double.Parse(lbl_numbers.Text), caseSwitch);
+                lbl_numbers.Text = risultato.ToString();
                 check = false;
             }
         }
@@ -44,9 +44,9 @@ namespace CalculatorAndroid
             if (lbl_numbers.Text != "")
             {
                 lbl_showoperations.Text = lbl_showoperations.Text + lbl_numbers.Text + "-";
-                risultato = o.Sottrazione(double.Parse(lbl_numbers.Text));
-                lbl_numbers.Text = Convert.ToString(risultato);
                 caseSwitch = "-";
+                risultato = o.Calcolo(double.Parse(lbl_numbers.Text), caseSwitch);
+                lbl_numbers.Text = risultato.ToString();
                 check = false;
             }
 
@@ -57,9 +57,9 @@ namespace CalculatorAndroid
             if (lbl_numbers.Text != "")
             {
                 lbl_showoperations.Text = lbl_showoperations.Text + lbl_numbers.Text + "/";
-                risultato = o.Divisione(double.Parse(lbl_numbers.Text));
-                lbl_numbers.Text = Convert.ToString(risultato);
                 caseSwitch = "/";
+                risultato = o.Calcolo(double.Parse(lbl_numbers.Text), caseSwitch);
+                lbl_numbers.Text = risultato.ToString();
                 check = false;
             }
 
@@ -70,34 +70,17 @@ namespace CalculatorAndroid
             if (lbl_numbers.Text != "")
             {
                 lbl_showoperations.Text = lbl_showoperations.Text + lbl_numbers.Text + "*";
-                risultato = o.Moltiplicazione(double.Parse(lbl_numbers.Text));
-                lbl_numbers.Text = Convert.ToString(risultato);
                 caseSwitch = "*";
+                risultato = o.Calcolo(double.Parse(lbl_numbers.Text), caseSwitch);
+                lbl_numbers.Text = risultato.ToString();
                 check = false;
             }
         }
 
         private void btn_risultato_Clicked(object sender, EventArgs e)
         {
-            switch (caseSwitch)
-            {
-                case "+":
-                    risultato = o.Somma(Convert.ToDouble(lbl_numbers.Text));
-                    lbl_numbers.Text = Convert.ToString(risultato);
-                    break;
-                case "-":
-                    risultato = o.Sottrazione(Convert.ToDouble(lbl_numbers.Text));
-                    lbl_numbers.Text = Convert.ToString(risultato);
-                    break;
-                case "*":
-                    risultato = o.Moltiplicazione(Convert.ToDouble(lbl_numbers.Text));
-                    lbl_numbers.Text = Convert.ToString(risultato);
-                    break;
-                case "/":
-                    risultato = o.Divisione(Convert.ToDouble(lbl_numbers.Text));
-                    lbl_numbers.Text = Convert.ToString(risultato);
-                    break;
-            }
+            risultato = o.Calcolo(double.Parse(lbl_numbers.Text), caseSwitch);
+            lbl_numbers.Text = Convert.ToString(risultato);
             o = new Operazione();
             lbl_showoperations.Text = "";
             check = false;
