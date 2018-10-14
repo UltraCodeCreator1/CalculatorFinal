@@ -8,71 +8,71 @@ namespace OperationLIbrary
 {
     public class Operazione : IOperazione
     {
-        int _risultato { get; set; }
-        bool _check { get; set; }
-        public Operazione(bool check)
+        double Risultato { get; set; }
+        bool Check { get; set; }
+        public Operazione()
         {
-            _check = check;
+            Check = false;
         }
-        public int Divisione(int n)
+        public double Divisione(double n)
         {
-            if (_check == false)
+            if (Check == false)
             {
-                _risultato = n;
-                _check = true;
+                Risultato = n;
+                Check = true;
             }
             else
-                _risultato = _risultato / n;
-            return _risultato;
+                Risultato = Risultato / n;
+            return Risultato;
         }
 
-        public int Moltiplicazione(int n)
+        public double Moltiplicazione(double n)
         {
-            if (_check == false)
+            if (Check == false)
             {
-                _risultato = n;
-                _check = true;
+                Risultato = n;
+                Check = true;
             }
             else
-                _risultato = _risultato * n;
-            return _risultato;
+                Risultato = Risultato * n;
+            return Risultato;
         }
 
-        public int Somma(int n)
+        public double Somma(double n)
         {
-            if (_check == false)
+            if (Check == false)
             {
-                _risultato = n;
-                _check = true;
+                Risultato = n;
+                Check = true;
             }
             else
-                _risultato = _risultato + n;
-            return _risultato;
+                Risultato = Risultato + n;
+            return Risultato;
         }
 
-        public int Sottrazione(int n)
+        public double Sottrazione(double n)
         {
-            if (_check == false)
+            if (Check == false)
             {
-                _risultato = n;
-                _check = true;
+                Risultato = n;
+                Check = true;
             }
             else
-                _risultato = _risultato - n;
-            return _risultato;
+                Risultato = Risultato - n;
+            return Risultato;
         }
 
-        public int XAllaseconda(int n)
+        public double XAllaseconda(double n)
         {
             return n * n;
         }
 
-        public double Radicequadrata(int n)
+        public double Radicequadrata(double n)
         {
             return Math.Sqrt(n);
         }
 
-        public double Unosux(int n)
+        public double Unosux(double n)
         {
             return 1 / n;
         }
