@@ -101,12 +101,14 @@ namespace CalculatorAndroid
 
         private void btn_ClearEntry_Clicked(object sender, EventArgs e)
         {
+            check = false;
             lbl_numbers.Text = "0";
             btn_virgola.IsEnabled = true;
         }
 
         private void btn_Clear_Clicked(object sender, EventArgs e)
         {
+            check = false;
             lbl_numbers.Text = "0";
             lbl_showoperations.Text = "";
             o = new Operazione();
@@ -115,12 +117,23 @@ namespace CalculatorAndroid
 
         private void btn_delete_Clicked(object sender, EventArgs e)
         {
+
             if (lbl_numbers.Text != "0" && lbl_numbers.Text != "")
             {
                 labeltext = lbl_numbers.Text;
-                modifiedtext = labeltext.Remove(labeltext.Length - 1, 1);
-                lbl_numbers.Text = modifiedtext;
+                if (labeltext.Length > 1)
+                {
+                    modifiedtext = labeltext.Remove(labeltext.Length - 1, 1);
+                    lbl_numbers.Text = modifiedtext;
+                }
+                else
+                {
+                    lbl_numbers.Text = "0";
+                    check = false;
+
+                }
             }
+
         }
 
         private void btn_easteregg_Clicked(object sender, EventArgs e)
