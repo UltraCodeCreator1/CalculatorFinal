@@ -13,7 +13,8 @@ namespace CalculatorAndroid
     {
         Operazione o;
         double risultato;
-        bool check;
+        bool piumenobool;
+        bool numberWriterBool;
         string head;
         string labeltext;
         string modifiedtext;
@@ -24,7 +25,8 @@ namespace CalculatorAndroid
             InitializeComponent();
             o = new Operazione();
             risultato = 0;
-            check = false;
+            numberWriterBool = false;
+            piumenobool = false;
         }
 
         private void btn_soum_Clicked(object sender, EventArgs e)
@@ -35,7 +37,7 @@ namespace CalculatorAndroid
                 caseSwitch = "+";
                 risultato = o.Calcolo(double.Parse(lbl_numbers.Text), caseSwitch);
                 lbl_numbers.Text = risultato.ToString();
-                check = false;
+                numberWriterBool = false;
             }
         }
 
@@ -47,7 +49,7 @@ namespace CalculatorAndroid
                 caseSwitch = "-";
                 risultato = o.Calcolo(double.Parse(lbl_numbers.Text), caseSwitch);
                 lbl_numbers.Text = risultato.ToString();
-                check = false;
+                numberWriterBool = false;
             }
 
         }
@@ -60,7 +62,7 @@ namespace CalculatorAndroid
                 caseSwitch = "/";
                 risultato = o.Calcolo(double.Parse(lbl_numbers.Text), caseSwitch);
                 lbl_numbers.Text = risultato.ToString();
-                check = false;
+                numberWriterBool = false;
             }
 
         }
@@ -73,7 +75,7 @@ namespace CalculatorAndroid
                 caseSwitch = "*";
                 risultato = o.Calcolo(double.Parse(lbl_numbers.Text), caseSwitch);
                 lbl_numbers.Text = risultato.ToString();
-                check = false;
+                numberWriterBool = false;
             }
         }
 
@@ -83,14 +85,28 @@ namespace CalculatorAndroid
             lbl_numbers.Text = Convert.ToString(risultato);
             o = new Operazione();
             lbl_showoperations.Text = "";
-            check = false;
+            numberWriterBool = false;
         }
 
         private void btn_piumeno_Clicked(object sender, EventArgs e)
         {
             string text = lbl_numbers.Text;
-            head = "-" + text.PadLeft(1, '-');
-            lbl_numbers.Text = head;
+            if (lbl_numbers.Text != "0" && lbl_numbers.Text != "")
+            { 
+                if (piumenobool == false)
+                {
+                    head = "-" + text.PadLeft(1, '-');
+                    lbl_numbers.Text = head;
+                    piumenobool = true;
+                }
+                else
+                {
+                    modifiedtext = text.Remove(0, 1);
+                    lbl_numbers.Text = modifiedtext;
+                    piumenobool = false;
+                }
+            }
+
         }
 
         private void btn_virgola_Clicked(object sender, EventArgs e)
@@ -101,14 +117,14 @@ namespace CalculatorAndroid
 
         private void btn_ClearEntry_Clicked(object sender, EventArgs e)
         {
-            check = false;
+            numberWriterBool = false;
             lbl_numbers.Text = "0";
             btn_virgola.IsEnabled = true;
         }
 
         private void btn_Clear_Clicked(object sender, EventArgs e)
         {
-            check = false;
+            numberWriterBool = false;
             lbl_numbers.Text = "0";
             lbl_showoperations.Text = "";
             o = new Operazione();
@@ -129,7 +145,7 @@ namespace CalculatorAndroid
                 else
                 {
                     lbl_numbers.Text = "0";
-                    check = false;
+                    numberWriterBool = false;
 
                 }
             }
@@ -145,29 +161,29 @@ namespace CalculatorAndroid
         {
             risultato = o.Radicequadrata(Convert.ToDouble(lbl_numbers.Text));
             lbl_numbers.Text = Convert.ToString(risultato);
-            check = false;
+            numberWriterBool = false;
         }
 
         private void btn_xallaseconda_Clicked(object sender, EventArgs e)
         {
             risultato = o.XAllaseconda(Convert.ToDouble(lbl_numbers.Text));
             lbl_numbers.Text = Convert.ToString(risultato);
-            check = false;
+            numberWriterBool = false;
         }
 
         private void btn_unosux_Clicked(object sender, EventArgs e)
         {
             risultato = o.Unosux(Convert.ToDouble(lbl_numbers.Text));
             lbl_numbers.Text = Convert.ToString(risultato);
-            check = false;
+            numberWriterBool = false;
         }
 
         private void btn_number_Clicked(object sender, EventArgs e)
         {
-            if (check == false)
+            if (numberWriterBool == false)
             {
                 lbl_numbers.Text = "";
-                check = true;
+                numberWriterBool = true;
             }
             Button btn = sender as Button;
             lbl_numbers.Text = lbl_numbers.Text + btn.ClassId;

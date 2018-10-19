@@ -42,7 +42,7 @@
         <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="2" Grid.Row="8" Text="," x:Name="btn_virgola" Clicked="btn_virgola_Clicked" />
         <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="0" Grid.Row="4" Text="CE" x:Name="btn_ClearEntry" Clicked="btn_ClearEntry_Clicked" />
         <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="1" Grid.Row="4" Text="C" x:Name="btn_Clear" Clicked="btn_Clear_Clicked" />
-        <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="2" Grid.Row="4" Text="␡" x:Name="btn_delete" Clicked="btn_delete_Clicked" />
+        <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="2" Grid.Row="4" Text="DEL" x:Name="btn_delete" Clicked="btn_delete_Clicked" />
         <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="0" Grid.Row="3" x:Name="btn_easteregg" Clicked="btn_easteregg_Clicked" />
         <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="1" Grid.Row="3" Text="√" x:Name="btn_radicequadrata" Clicked="btn_radicequadrata_Clicked" />
         <Button BackgroundColor="#A239CA" FontSize="30" TextColor="White" Grid.Column="2" Grid.Row="3" Text="x^2" x:Name="btn_xallaseconda" Clicked="btn_xallaseconda_Clicked" />

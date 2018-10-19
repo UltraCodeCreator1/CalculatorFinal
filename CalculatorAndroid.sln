@@ -13,6 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorAndroid", "Calcul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperationLIbrary", "OperationLIbrary\OperationLIbrary.csproj", "{8B46566B-864E-4A26-A839-16813509F3A2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Image", "Image", "{61468518-2FE6-44B5-8403-37E475E2ADD0}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Users\Lorenzo\Desktop\delete.png = ..\..\Users\Lorenzo\Desktop\delete.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
